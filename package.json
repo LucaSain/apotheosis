@@ -1,0 +1,30 @@
+{
+  "name": "apotheosis",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.52.3",
+    "@react-three/fiber": "^8.10.0",
+    "@types/three": "^0.148.0",
+    "@upstash/redis": "^1.19.1",
+    "daisyui": "^2.46.1",
+    "markdown-it": "^13.0.1",
+    "next": "13.1.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "three": "^0.148.0",
+    "two.js": "^0.8.10"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4"
+  }
+}
