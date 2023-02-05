@@ -5,14 +5,14 @@ import { order } from "./tree";
 
 export default function Filozof({ data, ctx }) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <div className="flex-initial pb-16">
         <Navbar />
       </div>
       <div className="w-screen flex-1 ">
         <div className="flex w-full justify-center ">
           <img
-            className="h-32  mt-5 rounded-full border-2 border-secondary mask"
+            className="h-32 mt-5 rounded-full border-2 border-secondary mask"
             src={"/philosopher/" + ctx.replace(/ /g, "").toLowerCase() + ".png"}
           />
         </div>
