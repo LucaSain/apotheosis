@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import md from "markdown-it";
+import { data } from "./tree";
+import redis from "../db/redis";
 
-export default function Editor() {
+export default function Editor({ arr }) {
   const [data, setData] = useState(["", ""]);
+  const textRef = useRef();
+  const inputRef = useRef();
   const [completed, setCompleted] = useState(false);
-
+  const [thing, setThing] = useState(-1);
   const submit = async () => {
     const requestData = JSON.stringify(data);
     await fetch("/api/submit", {
@@ -17,6 +21,11 @@ export default function Editor() {
       e.status === 200 ? setCompleted(true) : alert("something went wrong");
     });
   };
+
+  useEffect(() => {
+    textRef.current.value = thing !== -1 ? arr[thing].text : "";
+    //textRef.current.value = thing !== -1 ? arr[thing].text : "";
+  }, [thing]);
 
   const closeCompleted = () => {
     setCompleted(false);
@@ -40,6 +49,14 @@ export default function Editor() {
         >
           Upload!
         </button>
+        <button
+          onClick={() => {
+            setThing(thing + 1);
+          }}
+          className="btn btn-primary border-accent"
+        >
+          INCR
+        </button>
       </div>
       <div className="w-screen mt-2 flex items-center justify-center">
         <input
@@ -49,6 +66,7 @@ export default function Editor() {
           onChange={(e) => {
             setData([e.target.value, data[1], data[2]]);
           }}
+          ref={inputRef}
         />
 
         <label className="cursor-pointer label">
@@ -68,6 +86,7 @@ export default function Editor() {
           onChange={(e) => {
             setData([data[0], e.target.value, data[2]]);
           }}
+          ref={textRef}
         ></textarea>
         <div className=" prose bg-base-100 mx-auto min-h-full h-max mt-4 ml-4 mr-4 mb-4 rounded-xl flex-1">
           <div dangerouslySetInnerHTML={{ __html: md().render(data[1]) }} />
@@ -94,3 +113,15 @@ const Completed = ({ closeCompleted }) => {
     </div>
   );
 };
+
+export async function getServerSideProps() {
+  let arr = [];
+  for (let i = 0; i < 99; i++) {
+    arr.push({ id: data[i].id, text: await redis.get(data[i].id) });
+  }
+  return {
+    props: {
+      arr: arr,
+    },
+  };
+}

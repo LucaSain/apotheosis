@@ -36,6 +36,7 @@ export async function getStaticPaths() {
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps(context) {
   const id = context.params.id;
-  const data = await redis.get(id);
+  let data = await redis.get(id);
+
   return { props: { data: data, ctx: id } };
 }
