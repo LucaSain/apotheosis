@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Main() {
   return (
     <div className="relative z-30 flex flex-col justify-center items-center h-screen w-screen ">
-      <img className="h-1/2" src="/apotheosis.png" />
+      <img className="ml-2 h-1/2" src="/apotheosis.png" />
       <h1 className="text-6xl text-center bg-clip-text bg-gradient-to-l from-accent to-secondary text-transparent font-bold ">
         Apotheosis
       </h1>
