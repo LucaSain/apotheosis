@@ -9,7 +9,7 @@ export default function Filozof({ data, ctx }) {
       <div className="flex-initial pb-16">
         <Navbar />
       </div>
-      <div className="w-screen flex-1 ">
+      <div className="w-screen flex-1  ">
         <div className="flex w-full justify-center ">
           <img
             className="h-32 mt-5 rounded-full border-2 border-secondary mask"
