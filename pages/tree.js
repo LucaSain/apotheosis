@@ -266,7 +266,58 @@ export const data = [
       "Structura logicii este structura Naturii; telul nostru ar trebuie sa fie sa traim in acord cu Natura",
     time: -334,
   },
+  {
+    id: "Han Fei-Zi",
+    current: "Taoism",
+    color: "yellow",
+    image: "/hanfeizi.png",
+    position: [
+      0.024450213060579946, -3.7191340752824034, 1.4722241395774605,
+    ].map((x) => x * scale),
+    to: ["Li-Si"],
+    quote:
+      "In loc sa urmarim obiceiurile trecutului, ar trebui sa studiem prezentul si sa ne gandim cum putem sa-i face fata mai bine.",
+    time: -280,
+  },
 
+  {
+    id: "Wang Chong",
+    current: "Confucianism",
+    color: "yellow",
+    image: "/wangchong.png",
+    position: [-1.320968632809319, -2.5046452001776016, 2.8252069468202112].map(
+      (x) => x * scale
+    ),
+    to: [],
+    quote:
+      "Ar trebui sa intelegem lumea folosindu-ne de experienta si de ratiune, nu de superstitii absurde.",
+    time: 27,
+  },
+  {
+    id: "Nagarjuna",
+    current: "Realism",
+    color: "yellow",
+    image: "/nagarjuna.png",
+    position: [0.7742293258440965, -3.720595339936912, 1.248094254230317].map(
+      (x) => x * scale
+    ),
+    to: [],
+    quote: "Totul este relativ si nimic nu ar trebui afirmat, nici negat.",
+    time: 150,
+  },
+  {
+    id: "Sextus Empiricus",
+    current: "Aristotelianism",
+    color: "white",
+    image: "/sextusempiricus.png",
+    position: [-1.5681428144381477, -3.437821259202098, 1.3123692709386734].map(
+      (x) => x * scale
+    ),
+    to: ["Montaigne", "Descartes", "Hume"],
+    quote:
+      "Prin scepticism ajungem mai intai la suspendarea judecatii si apoi la eliberarea de neliniste.",
+    time: 200,
+  },
   {
     id: "Plotin",
     current: "Empiricism",
@@ -284,7 +335,7 @@ export const data = [
       "Radhakrishnan",
     ],
     quote: "Stam cu fata la Suprem cand Nous-ul nostru este pur",
-    time: 0,
+    time: 205,
   },
   {
     id: "Augustin",
@@ -305,23 +356,10 @@ export const data = [
       "Arnauld",
       "Malebranche",
     ],
+    time: 354,
     quote:
       "Ce este timpul? Daca nu ma intreaba nimeni stiu; daca ma intreaba si incerc sa explic, nu stiu. \n La inceput a fost credinta, iar ea este lamurita si sustinuta de ratiune.",
   },
-  {
-    id: "Sextus Empiricus",
-    current: "Aristotelianism",
-    color: "white",
-    image: "/sextusempiricus.png",
-    position: [-1.5681428144381477, -3.437821259202098, 1.3123692709386734].map(
-      (x) => x * scale
-    ),
-    to: ["Montaigne", "Descartes", "Hume"],
-    quote:
-      "Prin scepticism ajungem mai intai la suspendarea judecatii si apoi la eliberarea de neliniste.",
-    time: 0,
-  },
-
   {
     id: "Hypatia",
     current: "Rationalism",
@@ -333,46 +371,7 @@ export const data = [
     to: [],
     quote:
       "Aceasta lume este o copie imperfecta a Realitatii, pe care ca filozofi trebuie sa ne straduim sa o cunoastem si sa o intelegem.",
-    time: 300,
-  },
-
-  {
-    id: "Wang Chong",
-    current: "Confucianism",
-    color: "yellow",
-    image: "/wangchong.png",
-    position: [-1.320968632809319, -2.5046452001776016, 2.8252069468202112].map(
-      (x) => x * scale
-    ),
-    to: [],
-    quote:
-      "Ar trebui sa intelegem lumea folosindu-ne de experienta si de ratiune, nu de superstitii absurde.",
-    time: 0,
-  },
-  {
-    id: "Han Fei-Zi",
-    current: "Taoism",
-    color: "yellow",
-    image: "/hanfeizi.png",
-    position: [
-      0.024450213060579946, -3.7191340752824034, 1.4722241395774605,
-    ].map((x) => x * scale),
-    to: ["Li-Si"],
-    quote:
-      "In loc sa urmarim obiceiurile trecutului, ar trebui sa studiem prezentul si sa ne gandim cum putem sa-i face fata mai bine.",
-    time: 0,
-  },
-  {
-    id: "Nagarjuna",
-    current: "Realism",
-    color: "yellow",
-    image: "/nagarjuna.png",
-    position: [0.7742293258440965, -3.720595339936912, 1.248094254230317].map(
-      (x) => x * scale
-    ),
-    to: [],
-    quote: "Totul este relativ si nimic nu ar trebui afirmat, nici negat.",
-    time: 0,
+    time: 370,
   },
 
   // <<<<<<<<<<<<<<<<<< Evul Mediu >>>>>>>>>>>>>>>>>>>>>
@@ -394,7 +393,7 @@ export const data = [
       "Toma d'Aquino",
     ],
     quote: "Ce fel de fericire poate fi in oarba nestiinta?",
-    time: 0,
+    time: 480,
     size: 1,
   },
   {
@@ -408,7 +407,7 @@ export const data = [
     to: ["Ramanuja", "Radhakrishnan", "Vivekananda"],
     quote:
       "Brahman nu este intru totul mai presus de intelegere, fiindca este inteles ca fiind continutul conceptului de 'eu'",
-    time: 0,
+    time: 788,
     size: 1,
   },
   {
@@ -422,7 +421,7 @@ export const data = [
     to: ["Roger Bacon"],
     quote:
       "Nu credem că [un filozof] ar putea da un răspuns care s-arputea compara din punctul de vedere al conciziei şi al clarităţii, al caracterului direct şi al puterii de înţelegere şi cuprindere a ceea ce e necesar cu cel dat de Profetul binecuvantat.",
-    time: 0,
+    time: 801,
     size: 1,
   },
   {
@@ -436,7 +435,7 @@ export const data = [
     to: ["Amalric din Bena", "Toma d'Aquino", "Nicolaus Cusanus"],
     quote:
       "Natura este numele universal al tuturor lucrurilor care exista si care nu exista.",
-    time: 0,
+    time: 810,
     size: 1,
   },
   {
@@ -450,7 +449,7 @@ export const data = [
     to: ["Avicenna", "Al-Gazali", "Averroes", "Maimonide", "Toma d'Aquino"],
     quote:
       "Falsul filozofeste acela care Îşi Însuşeşte ştiinţele teoretice fără să ajungă la perfecţiunea supremă ca să-i poată iniţia pe alţii În ceea ce ştie, in măsura În care le-o permite capacitatea de înţelegere.",
-    time: 0,
+    time: 870,
     size: 1,
   },
   {
@@ -472,7 +471,7 @@ export const data = [
     ],
     quote:
       "Dumnezeu este necesar, unic si in afara timpului; totul emana din Dumnezeu, deci totul este in mod necesar asa cum este.",
-    time: 0,
+    time: 980,
     size: 1,
   },
   {
@@ -486,7 +485,7 @@ export const data = [
     to: ["Toma d'Aquino", "Nicolaus Cusanus", "Descartes", "Anscombe"],
     quote:
       "Nu caut sa inteleg pentru a putea crede, ci cred pentru a putea intelege.",
-    time: 0,
+    time: 1033,
     size: 1,
   },
   {
@@ -500,7 +499,7 @@ export const data = [
     to: ["Radhakrishnan"],
     quote:
       "Lumea este un intreg al carui parti sunt interdependente, format din Brahman, materie si suflete",
-    time: 0,
+    time: 1017,
     size: 1,
   },
   {
@@ -514,7 +513,7 @@ export const data = [
     to: ["Averroes", "Sohravardi", "Nicholas d'Autrecourt"],
     quote:
       "Credinta religioasa este esentiala, dar ea poate si ar trebui sa fie sustinuta de ratiune",
-    time: 0,
+    time: 1058,
     size: 1,
   },
   {
@@ -528,7 +527,7 @@ export const data = [
     to: ["John Salisbury"],
     quote:
       "Aceeaşi faptă poate fi Înfăptuită de acelaşi om În momente diferite. Dar, în funcţie de intenţia lui diferită, această faptă poate fi o dată bună şi altă dată rea.",
-    time: 0,
+    time: 1079,
     size: 1,
   },
   {
@@ -542,7 +541,7 @@ export const data = [
     to: ["Roger Bacon", "Toma d'Aquino"],
     quote:
       "Acum, deoarece [Islamul] este adevărat, [...] noi, comunitatea musulmană, ştim cu certitudine că [filozofia] nu duce la [concluzii] care contrazic ceea ce ne-a dat Scriptura; căci adevărul nu se opune adevărului, ci concordă cu el şi stă mărturie pentru el.",
-    time: 0,
+    time: 1126,
     size: 1,
   },
   {
@@ -555,7 +554,7 @@ export const data = [
     ),
     to: ["Wang Fu-Zi", "Kang Youwei", "Feng"],
     quote: "Fiecare lucru are un qi fundamental, care este li-ul fundamental",
-    time: 0,
+    time: 1130,
     size: 1,
   },
   {
@@ -569,7 +568,7 @@ export const data = [
     to: ["Toma d'Aquino", "Albertus Magnus", "Spinoza"],
     quote:
       "Filozofia este forma suprema de gandire, dar acolo unde ea nu da raspuns, revelatia poate umple acest gol",
-    time: 0,
+    time: 1135,
     size: 1,
   },
   {
@@ -583,7 +582,7 @@ export const data = [
     to: [],
     quote:
       "stiinta experimentala este stapana stiintelor speculative, numai ea ne poate furniza adevaruri importante in limitele celorlalte stiinte, adevaruri pe care acele stiinte nu le pot descoperi in nici un alt mod",
-    time: 0,
+    time: 1214,
     size: 1,
   },
   {
@@ -597,29 +596,7 @@ export const data = [
     to: ["Duns Scotus", "Suarez", "Descartes", "Anscombe"],
     quote:
       "Omul năzuieşte în mod necesarla Fericire şi nu poate dori să nu fie fericit sau să fie nefericit.",
-    time: 0,
-    size: 1,
-  },
-  {
-    id: "William din Ockham",
-    current: "Realism",
-    color: "aqua",
-    image: "/williamdinockham.png",
-    position: [1.876773033789454, 0.81538371913385, 3.4369859426846916].map(
-      (x) => x * scale_cassiopea
-    ),
-    to: [
-      "Buridan",
-      "Suarez",
-      "Descartes",
-      "Locke",
-      "Leibniz",
-      "Berkeley",
-      "Hume",
-    ],
-    quote:
-      "Se poate dovedi clar ca nici un principiu universal nu este o substanta existenta in afara intelectului.",
-    time: 0,
+    time: 1225,
     size: 1,
   },
   {
@@ -633,9 +610,33 @@ export const data = [
     to: ["William din Ockham", "Peirce", "Heidegger"],
     quote:
       "Fiecare individ sau lucru are o hecceitate sau 'identitate' unica - o esenta care il face sa fie exact acel individ sau lucru",
-    time: 0,
+    time: 1266,
     size: 1,
   },
+  {
+    id: "William din Ockham",
+    current: "Realism",
+    color: "aqua",
+    image: "/williamdinockham.png",
+    position: [1.876773033789454, 0.81538371913385, 3.4369859426846916].map(
+      (x) => x * scale_cassiopea
+    ),
+
+    to: [
+      "Buridan",
+      "Suarez",
+      "Descartes",
+      "Locke",
+      "Leibniz",
+      "Berkeley",
+      "Hume",
+    ],
+    quote:
+      "Se poate dovedi clar ca nici un principiu universal nu este o substanta existenta in afara intelectului.",
+    time: 1285,
+    size: 1,
+  },
+
   {
     id: "Nicolaus Cusanus",
     current: "Realism",
@@ -647,7 +648,7 @@ export const data = [
     to: ["Copernic", "Bruno", "Leibniz", "Spinoza"],
     quote:
       "Precum in cer asa si pre pamant; natura lumii oglindeste natura creatorului",
-    time: 0,
+    time: 1401,
     size: 1,
   },
   {
@@ -661,7 +662,7 @@ export const data = [
     to: ["Hobbes", "Montesquieu", "Rousseau", "Nietzsche"],
     quote:
       "Un principe, şi îndeosebi unul nou, nu poate respecta toate acele lucruri considerate bune în oameni, fiind obligat, pentru a menţine statul, să acţioneze împotriva credinţei, a milostiveniei, a omeniei şi a religiei.",
-    time: 0,
+    time: 1469,
     size: 1,
   },
   {
@@ -675,7 +676,7 @@ export const data = [
     to: ["Grotius", "Descartes", "Leibniz", "Wolff", "Schopenhauer"],
     quote:
       "Toate celelalte ştiinţe folosesc adesea principii metafizice sau le prezumă pentru a avansa in demonstraţiile sau argumentele lor; şi astfel se întâmplă adesea să apară greşeli în celelalte ştiinţe datorită necunoaşterii metafizicii.",
-    time: 0,
+    time: 1548,
     size: 1,
   },
 
@@ -692,7 +693,7 @@ export const data = [
     to: ["Diderot", "Hobbes", "Hume", "Haack"],
     quote:
       "Stiinta este treaba laboratoarelor, nu a indivizilor asezati in fotoliu.",
-    time: 0,
+    time: 1561,
   },
   {
     id: "Hobbes",
@@ -715,7 +716,7 @@ export const data = [
       "Montesquieu",
     ],
     quote: "Si viata omului [ar fi] solitara, meschina, josnica si scurta.",
-    time: 0,
+    time: 1588,
   },
   {
     id: "Mersenne",
@@ -728,7 +729,7 @@ export const data = [
     to: ["Descartes"],
     quote:
       "Stim oare daca, potrivit legilor naturii, ragetul magarului nu este mai placut decat muzica noastra, dat fiind ca el este mai placut pentru acest animal?",
-    time: 0,
+    time: 1588,
   },
   {
     id: "Gassendi",
@@ -740,7 +741,7 @@ export const data = [
     ),
     to: ["Locke"],
     quote: "Lumea este un mecanism si trebuie sa-l cunoastem prin observatie",
-    time: 0,
+    time: 1592,
   },
   {
     id: "Descartes",
@@ -766,7 +767,7 @@ export const data = [
       "Husserld",
     ],
     quote: "Gandesc, deci exist.",
-    time: 0,
+    time: 1596,
   },
   {
     id: "Arnauld",
@@ -779,7 +780,7 @@ export const data = [
     to: ["Leibniz", "Reid", "Chomsky"],
     quote:
       "Sunt din cutaJe ţară, aşa că ar trebui să cred că un anume sfănt a propovăduit litera Evangheliei [. . . ] Din orice ordin sau din orice ţară veniţi, ar trebui să credeţi numai ce este adevărat şi ce aţi fi dispuşi să credeţi dacă a ţi fi dintr-o altă ţară.",
-    time: 0,
+    time: 1612,
   },
   {
     id: "Wang Fu-Zi",
@@ -792,7 +793,7 @@ export const data = [
     to: ["Yen Tuan", "Tai Chen", "T'an Ssut'ung", "Tang Chuni"],
     quote:
       "Calea [Dao] înseamnă stăpânirea lucruIiJor concrete. Lao-zi nu a văzut asta şi a spus că Dao există în vid [...] Buddha nu a văzut asta şi a spus că Dao există in tăcere [...] Putem continua să rostim asemenea cuvinte pretenţioase, dar nimeni nu poate scăpa vreodată de lucrurile concrete.",
-    time: 0,
+    time: 1619,
   },
   {
     id: "Conway",
@@ -805,7 +806,7 @@ export const data = [
     to: ["Leibniz"],
     quote:
       "Când materia concretă este atât de divizată încât se împrăştie în monade fizice, aşa cum era în stare primară, la formarea ei, atunci este gata să-şi reia activitatea şi să devină spirit, aşa cum se întâmplă cu hrana noastră.",
-    time: 0,
+    time: 1631,
   },
   {
     id: "Spinoza",
@@ -818,7 +819,7 @@ export const data = [
     to: ["Conway", "Kant", "Hegel", "Davidson"],
     quote:
       "Spiritul si trupul sunt unul si acelasi individ conceput cand prin atributul gandirii, cand prin atributul intinderii",
-    time: 0,
+    time: 1632,
   },
   {
     id: "Locke",
@@ -839,7 +840,7 @@ export const data = [
     ],
     quote:
       "Experienta: Pe ea se intemeiaza intreaga noastra cunoastere; si din ea decurge pana la urma.",
-    time: 0,
+    time: 1632,
   },
   {
     id: "Malebranche",
@@ -860,7 +861,7 @@ export const data = [
     ],
     quote:
       "Numai Dumnezeu este cauza adevarata si numai El are puterea sa miste corpuri.",
-    time: 0,
+    time: 1638,
   },
   {
     id: "Leibniz",
@@ -883,7 +884,7 @@ export const data = [
     ],
     quote:
       "Daca aceasta nu ar fi cea mai buna dintre toate lumile posibile, Dumnezeu nu ar fi ceat-o",
-    time: 0,
+    time: 1646,
   },
   {
     id: "Berkeley",
@@ -896,20 +897,7 @@ export const data = [
     to: ["Reid", "Hume", "Kant"],
     quote:
       "În ansamblu, înclin să cred că in cea mai mare parte, dacă nu în totalitate, acele dificultăţi de care s-au ocupat până acum filozofii şi care au blocat drumul către cunoaştere sunt provocate în întregime de noi înşine. Că am ridicat mai întâi un nor de praf şi apoi ne plângem că nu putem vedea.",
-    time: 0,
-  },
-  {
-    id: "Amo",
-    current: "Realism",
-    color: "red",
-    image: "/amo.png",
-    position: [2.8993751542287387, -0.277437441569213, 2.741651360231021].map(
-      (x) => x * scale_andromeda
-    ),
-    to: [],
-    quote:
-      "Filozofie si stiinta ar trebui sa fie armele noastre importiva superstitiei si a sclaviei",
-    time: 0,
+    time: 1685,
   },
   {
     id: "Montesquieu",
@@ -922,8 +910,22 @@ export const data = [
     to: ["Hume", "Burke", "Hegel"],
     quote:
       "Lumea, inclusiv cea politică, funcţionează după legi uniforme şi pentru a înţelege orice parte a ei trebuie să aflăm cum se raportează la restul conform acestor legi.",
-    time: 0,
+    time: 1689,
   },
+  {
+    id: "Amo",
+    current: "Realism",
+    color: "red",
+    image: "/amo.png",
+    position: [2.8993751542287387, -0.277437441569213, 2.741651360231021].map(
+      (x) => x * scale_andromeda
+    ),
+    to: [],
+    quote:
+      "Filozofie si stiinta ar trebui sa fie armele noastre importiva superstitiei si a sclaviei",
+    time: 1703,
+  },
+
   {
     id: "Reid",
     current: "Realism",
@@ -935,7 +937,7 @@ export const data = [
     to: ["Hamilton", "Peirce", "Moore", "Austin"],
     quote:
       "Forma expresiei simt durerea ar putea părea să sugereze că senzaţia este distinctă de durerea resimţită; totuşi, în realitate nu există nici o deosebire.",
-    time: 0,
+    time: 1710,
   },
   {
     id: "Hume",
@@ -962,7 +964,7 @@ export const data = [
     ],
     quote:
       "Aproape la fel de ridicol ca a tăgădui un adevăr evident este a te strădui pIea mult să-I aperi; şi nici un adevăr nu mi se pare mai evident decăt acela că animalele sunt inzestrate cu gândire şi raţiune ca şi oamenii.",
-    time: 0,
+    time: 1711,
   },
   {
     id: "Rousseau",
@@ -975,7 +977,7 @@ export const data = [
     to: ["Wollstonecraft", "Hegel", "Rawls", "Derrida"],
     quote:
       "Omul se naşte liber şi pretutindeni este înlănţuit. Unul se crede stăpânul celorlalţi şi cu toate acestea rămăne mai sclav decât ei.",
-    time: 0,
+    time: 1712,
   },
   {
     id: "Kant",
@@ -1004,7 +1006,7 @@ export const data = [
     ],
     quote:
       "Fără sensibilitate nici un obiect nu ne-ar fi dat, fără inţelegere nici un obiect nu ar fi gândit. Gândurile fără conţinut sunt vide, intuiţiile fără concepte sunt oarbe.",
-    time: 0,
+    time: 1724,
   },
   {
     id: "Bentham",
@@ -1017,7 +1019,7 @@ export const data = [
     to: ["Peirce", "Singer", "Mill"],
     quote:
       "[Despre responsabilităţile noastre morale faţă de animale] Întrebarea nu este 'Pot să gândească?', nici 'Pot să vorbească?', ci 'Pot să sufere?'",
-    time: 0,
+    time: 1748,
   },
 
   // <<<<<<<<<<<<<<<<<<<<<<<< Modernitate >>>>>>>>>>>>>>>>>>>>>>>>>> 10
@@ -1042,7 +1044,7 @@ export const data = [
     ],
     quote:
       "şa cum esenţa materiei este gravitaţia, la fel, pe de altă parte, putem afirma că substanţa, esenţa Spiritului este Libertatea",
-    time: 0,
+    time: 1770,
   },
   {
     id: "Mill",
@@ -1066,7 +1068,7 @@ export const data = [
     ],
     quote:
       "E mai bine să fii un om nesatisfăcut decât un porc satisfăcut; mai bine să fii Socrate nemulţumit decât un prost mulţumit. Iar dacă prostul sau porcul este de altă părere, aceasta se întâmplă pentru că ei cunosc numai punctul lor de vedere.",
-    time: 0,
+    time: 1806,
   },
   {
     id: "Kierkgaard",
@@ -1079,7 +1081,7 @@ export const data = [
     to: ["Jaspers", "Wittgenstein", "Heidegger", "Sartre"],
     quote:
       "Creştinismul priveşte subiectivitatea şi numai in subiectivitate există adevărul său, dacă există intr-adevăr; in mod obiectiv, creştinismul nu are existenţă.",
-    time: 0,
+    time: 1813,
   },
   {
     id: "Marx",
@@ -1092,7 +1094,7 @@ export const data = [
     to: ["Lenin", "Trotki", "Adrono", "Gramsci", "Singer", "Derrida"],
     quote:
       "Filozofii nu au făcut altceva decât să interpreteze lumea în diferite moduri; important este însă a o schimba.",
-    time: 0,
+    time: 1818,
   },
   {
     id: "Welby",
@@ -1104,7 +1106,7 @@ export const data = [
     ),
     to: ["Peirce", "Ogden"],
     quote: "Timpul este ca o derivata.",
-    time: 0,
+    time: 1837,
   },
   {
     id: "Peirce",
@@ -1116,7 +1118,7 @@ export const data = [
     ].map((x) => x * scale_scorpio),
     to: ["Welby", "James", "Royce", "Dewey", "Popper", "Wiggins", "Haack"],
     quote: "E usor sa fii sigur. Trebuie doar sa fii sucient de ambiguu.",
-    time: 0,
+    time: 1839,
   },
   {
     id: "James",
@@ -1137,7 +1139,7 @@ export const data = [
     ],
     quote:
       "Adevărul este orice este util în gândire, moralitatea este orice este util în acţiune.",
-    time: 0,
+    time: 1842,
   },
   {
     id: "Nietzsche",
@@ -1150,7 +1152,7 @@ export const data = [
     to: ["Jaspers", "Iqbal", "Heidegger", "Sartre"],
     quote:
       "Arta face priveliştea vieţii suportabilă, aşezând peste ea văJul gândirii neclare.",
-    time: 0,
+    time: 1844,
   },
   {
     id: "Bradley",
@@ -1163,7 +1165,7 @@ export const data = [
     to: ["Collingwood", "Russell"],
     quote:
       "Modul de a înţelege lumea, despre care am constatat că este cel mai justificabil, este să o considerăm drept o Experienţă unică, superioară relaţior şi conţinând În sens deplin tot ceea ce există.",
-    time: 0,
+    time: 1846,
   },
   {
     id: "Frege",
@@ -1186,7 +1188,7 @@ export const data = [
     ],
     quote:
       "Un nume propriu (cuvânt, semn, combinaţie de semne, expresie) exprimă sensul său, simbolizează sau desemnează semnificaţia. Cu ajutorul unui semn, îi exprimăm sensul şi îi desemnăm semnificaţia.",
-    time: 0,
+    time: 1848,
   },
 
   // <<<<<<<<<<< Secolul al XX Lea >>>>>>>>>>>>>>>> 29
@@ -1202,7 +1204,7 @@ export const data = [
     to: ["Heidegger", "Sartre", "Merleau-Ponty"],
     quote:
       "Filozoful trebuie să se ocupe de esenţele lucrurilor, studiind modul în care ne este dată experienţa de sine şi a lumii În care trăim.",
-    time: 0,
+    time: 1859,
   },
   {
     id: "Dewey",
@@ -1215,7 +1217,7 @@ export const data = [
     to: ["Wiredu"],
     quote:
       "Ceea ce contează este viaţa practică, iar sarcina filozofiei este de a o face mai uşoară şi mai bogată.",
-    time: 0,
+    time: 1859,
   },
   {
     id: "Russell",
@@ -1240,7 +1242,7 @@ export const data = [
     ],
     quote:
       "Trei pasiuni simple, dar copleşitor de puternice mi-au condus viaţa: dorinţa de iubire, căutarea cunoaşterii şi compasiunea de nesuportat pentru suferinţa omenirii.",
-    time: 0,
+    time: 1872,
   },
   {
     id: "Iqbal",
@@ -1253,7 +1255,7 @@ export const data = [
     to: [],
     quote:
       "A exista în durată pură înseamnă a fi un sine si a fi un sine înseamnă a putea să spui 'eu sunt'.",
-    time: 0,
+    time: 1872,
   },
   {
     id: "Radhakrishnan",
@@ -1266,7 +1268,7 @@ export const data = [
     to: [],
     quote:
       "Dacă spiritul va putea vreodată să se simtă acasă În această lume şi nu doar un prizonier sau un fugar, temeliile spirituale trebuie construite În adâncime şi păstrate cu demnitate. Religia trebuie să se exprime prin gândire raţională, acţiune rodnică şi instituţii sociale adecvate.",
-    time: 0,
+    time: 1888,
   },
   {
     id: "Wittgenstein",
@@ -1287,7 +1289,7 @@ export const data = [
     ],
     quote:
       "Sarcina filozofiei este numai de a analiza aserţiunile noastre pentru a le descoperi pe cele fără sens (fără referinţă).",
-    time: 0,
+    time: 1889,
   },
   {
     id: "Heidegger",
@@ -1300,7 +1302,7 @@ export const data = [
     to: ["Sartre", "Ventre", "Adrono", "Merlau-Ponty", "Derrida"],
     quote:
       "Am văzut [în nazism] posibilitatea unei rememorări şi a unei renaşteri interioare a poporului şi calea care i-ar permite să-şi descopere vocaţia istorică în lumea occidentală.",
-    time: 0,
+    time: 1889,
   },
   {
     id: "Carnap",
@@ -1313,7 +1315,7 @@ export const data = [
     to: ["Wittgenstein", "Quine", "Popper", "Ayer", "Putnam"],
     quote:
       "Ştiinţa este un sistem de enunţuri bazate pe experienţa directă şi verificate experimental. Totuşi, În ştiinţă nu sunt verificate enunţuri singulare, ci Întregul sistem sau un subsistem de asemenea enunţuri.",
-    time: 0,
+    time: 1891,
   },
   {
     id: "Feng",
@@ -1326,20 +1328,7 @@ export const data = [
     to: [],
     quote:
       "Nu este necesar ca omul să fie pios, dar este necesar ca el să filozofeze. Când filozofează, are parte de cele mai mari binecuvântări ale religiei.",
-    time: 0,
-  },
-  {
-    id: "Sartre",
-    current: "Realism",
-    color: "aqua",
-    image: "/sartre.png",
-    position: [3.479627626896265, -1.15531505259396, 1.5991993957571655].map(
-      (x) => x * scale_pegasus
-    ),
-    to: [],
-    quote:
-      "Pentru-sinele, de fapt, nu este altceva decat pura neantizare a in-sinelui; este ca o gaura de fiinta in centrul fiintei.",
-    time: 0,
+    time: 1895,
   },
   {
     id: "Popper",
@@ -1352,8 +1341,22 @@ export const data = [
     to: ["Kuhn"],
     quote:
       "În măsura În care un enunţ ştiinţific vorbeşte despre realitate, el trebuie să fie falsificabil; şi în măsura în care nu este falsificabil, el nu vorbeşte despre realitate.",
-    time: 0,
+    time: 1902,
   },
+  {
+    id: "Sartre",
+    current: "Realism",
+    color: "aqua",
+    image: "/sartre.png",
+    position: [3.479627626896265, -1.15531505259396, 1.5991993957571655].map(
+      (x) => x * scale_pegasus
+    ),
+    to: [],
+    quote:
+      "Pentru-sinele, de fapt, nu este altceva decat pura neantizare a in-sinelui; este ca o gaura de fiinta in centrul fiintei.",
+    time: 1905,
+  },
+
   {
     id: "Quine",
     current: "Realism",
@@ -1365,7 +1368,7 @@ export const data = [
     to: ["Davidson", "Kuhn", "Wiggins", "Lewis", "Haack"],
     quote:
       "Ar trebui să acceptăm ca existente numai acele lucruri care sunt necesare pentru ca explicaţiile noastre să funcţioneze.",
-    time: 0,
+    time: 1908,
   },
   {
     id: "Ayer",
@@ -1378,20 +1381,7 @@ export const data = [
     to: ["Strawson"],
     quote:
       "Un om raţional este un om care foloseşte cum se cuvine raţiunea: şi aceasta implică, printre altele, să evalueze corect forţa evidenţei.",
-    time: 0,
-  },
-  {
-    id: "Hare",
-    current: "Realism",
-    color: "aqua",
-    image: "/hare.png",
-    position: [2.9695280651797478, -1.5460443251596423, 2.1889837858585186].map(
-      (x) => x * scale_pegasus
-    ),
-    to: ["Singer"],
-    quote:
-      "Judecatile etice sunt imperative morale care se aplica fiecarui individ in situatia relevanta.",
-    time: 0,
+    time: 1910,
   },
   {
     id: "Davidson",
@@ -1404,8 +1394,22 @@ export const data = [
     to: ["Wiggins"],
     quote:
       "Evenimentele mentale sunt evenimente fizice, dar aceasta nu ne pennite să aplicăm mentalului legi fizice.",
-    time: 0,
+    time: 1917,
   },
+  {
+    id: "Hare",
+    current: "Realism",
+    color: "aqua",
+    image: "/hare.png",
+    position: [2.9695280651797478, -1.5460443251596423, 2.1889837858585186].map(
+      (x) => x * scale_pegasus
+    ),
+    to: ["Singer"],
+    quote:
+      "Judecatile etice sunt imperative morale care se aplica fiecarui individ in situatia relevanta.",
+    time: 1919,
+  },
+
   {
     id: "Strawson",
     current: "Realism",
@@ -1417,7 +1421,7 @@ export const data = [
     to: ["Wiredu", "Lewis", "Haack"],
     quote:
       "Conceptul de persoană este logic anterior fâţă de cel de conştiinţă individuală. Conceptul de persoană nu poate fi analizat ca fiind acela al unui trup însufleţit sau al unui spirit intrupat.",
-    time: 0,
+    time: 1919,
   },
   {
     id: "Anscombe",
@@ -1430,7 +1434,7 @@ export const data = [
     to: [],
     quote:
       "... dacă cineva crede într-adevăr,dinainte, că este discutabil dacă o acţiune precum executarea de către autorităţi a unor oameni nevinovaţi trebuie să fie exclusă de la a fi luată în considerare - nu vreau să discut cu el; dovedeşte că are o minte coruptă.",
-    time: 0,
+    time: 1925,
   },
   {
     id: "Rawls",
@@ -1443,7 +1447,7 @@ export const data = [
     to: ["Nagel"],
     quote:
       "Fiecare persoana poseda o inviolabilitate bazata pe dreptate, care nu poate fi incalcata nici macar in scopul bunastarii generale.",
-    time: 0,
+    time: 1921,
   },
   {
     id: "Kuhn",
@@ -1456,7 +1460,7 @@ export const data = [
     to: [],
     quote:
       "Într-un sens pe care nu pot să-l explic, susţinătorii paradigmelor concurente îşi exercită profesia În lumi diferite. [Şi procedând astfel] cele două grupuri de oameni de ştiţă văd lucruri diferite când privesc din acelaşi punct în aceeaşi direcţie.",
-    time: 0,
+    time: 1922,
   },
   {
     id: "Dummett",
@@ -1469,7 +1473,7 @@ export const data = [
     to: [],
     quote:
       "Conflictul dintre realism şi antirealism este un cont1ict despre tipul de semnificaţie posedată de enunţurile din clasa în discuţie.",
-    time: 0,
+    time: 1925,
   },
   {
     id: "Derrida",
@@ -1482,7 +1486,7 @@ export const data = [
     to: [],
     quote:
       "Sensul adevărat se află in diferentele dintre semne, iar aceste diferente devin ele insele noi semne.",
-    time: 0,
+    time: 1930,
   },
   {
     id: "Wiredu",
@@ -1495,7 +1499,7 @@ export const data = [
     to: [],
     quote:
       "Pentru ca un sistem ideologic să fie asociat cu o anumită rasă, cu un anumit popor, cu o anumită regiune sau cu anumită naţiune, este suficient ca el să fie sau să devină o tradiţie vie acolo. Nu contează dacă este indigenă sau împrumutată integral sau parţial de la alte",
-    time: 0,
+    time: 1931,
   },
   {
     id: "Wiggins",
@@ -1508,7 +1512,7 @@ export const data = [
     to: ["Nagel", "Kripke"],
     quote:
       "Cu cât mai mari sunt obstacolele pe care natura sau alţi oameni ni le pun în cale şi cu cât mai mici sunt şansele de reuşită, cu atât cei mai mulţi dintre noi vom considera că totul are mai puţin sens. Până la urmă, sensul ăunei acţiuni] depinde de rezultatul aşteptat, iar aşteptările depind de rezultatele obţinute În trecut.",
-    time: 0,
+    time: 1933,
   },
   {
     id: "Nagel",
@@ -1521,7 +1525,7 @@ export const data = [
     to: [],
     quote:
       "Intocmai precum exista cerinte rationale impuse gandirii, exista cerinte rationale impuse actiunii, iar altruismul este una dintre ele.",
-    time: 0,
+    time: 1937,
   },
   {
     id: "Kripke",
@@ -1534,7 +1538,7 @@ export const data = [
     to: ["Nagel"],
     quote:
       "Teoria numelor văzute ca mănunchiuri de descrieri este o teorie foarte fiumoasă. Singurul defect pe care cred că-l are este probabil comun tuturor teorior mozofice.E greşită.",
-    time: 0,
+    time: 1940,
   },
   {
     id: "Lewis",
@@ -1547,7 +1551,7 @@ export const data = [
     to: [],
     quote:
       "... fiecare lume e actuală in ea insăşi şi, prin unnare, toate lumile sunt la egalitate. Aceasta nu înseamnă că toate lumile sunt actuale - nu există o lume în care acest lucru să fie adevărat. aşa cum nu există vreun timp in care să fie prezente toate timpurile.",
-    time: 0,
+    time: 1941,
   },
   {
     id: "Haack",
@@ -1560,7 +1564,7 @@ export const data = [
     to: [],
     quote:
       "Imi amintesc că titlurile din buletinul informativ oficial publicat de University of Warwick anunţau un 'Succes major al cercetării în domeniulfiziciila Warwick; În articol se relata nu despre vreo descoperire a savanţilor noştri, ci despre faptul că obţinuseră nişte fonduri.",
-    time: 0,
+    time: 1945,
   },
   {
     id: "Singer",
@@ -1573,7 +1577,7 @@ export const data = [
     to: [],
     quote:
       "O viaţă trăită cu compasiune şi respect pentru alţii nu este numai corectă din punct de vedere moral, ci şi plină de satisfacţii in plan personal.",
-    time: 0,
+    time: 1946,
   },
 ];
 
@@ -1736,9 +1740,16 @@ export default function Tree() {
   };
 
   useEffect(() => {
-    if (current.to <= 0) {
+    if (current.time < 480) {
       setEpoque("Antichitate");
-      // to be finished
+    } else if (current.time < 1561) {
+      setEpoque("Epoca Medivala");
+    } else if (current.time < 1770) {
+      setEpoque("Epoca Moderna Timpurie");
+    } else if (current.time < 1859) {
+      setEpoque("Secolul al XIX-lea");
+    } else {
+      setEpoque("Secolul al XX-lea");
     }
     if (order.indexOf(current.id) === 0) {
       setPrev(order[order.length - 1]);
