@@ -1,6 +1,7 @@
 import Navbar from "../components/navbar";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
+
 const TwoTimeLine = dynamic(() => import("../components/two/twotimeline"), {
   ssr: false,
 });
@@ -12,7 +13,7 @@ export default function Timeline() {
   return (
     <>
       <Navbar />
-      <TwoTimeLine pos={pos} />
+      {pos ? <TwoTimeLine pos={pos} /> : <TwoTimeLine />}
     </>
   );
 }

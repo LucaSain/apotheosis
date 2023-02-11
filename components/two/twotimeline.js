@@ -4,6 +4,8 @@ import { MathUtils } from "three";
 import { data } from "../../pages/tree";
 
 export default function TwoTimeLine({ pos }) {
+  console.log("1");
+  let twoRef = useRef();
   let two = new Two({
     autostart: true,
     fullscreen: false,
@@ -11,6 +13,7 @@ export default function TwoTimeLine({ pos }) {
     width: window.innerWidth,
   });
   let group = two.makeGroup();
+  const [dragging, setDragging] = useState(false);
 
   const ratio = 0.74;
   const centerX = two.width / 2;
@@ -98,10 +101,10 @@ export default function TwoTimeLine({ pos }) {
         false
       );
       two.update();
+      console.log("2");
     });
   };
 
-  let twoRef = useRef();
   useEffect(() => {
     two.appendTo(twoRef.current);
     two.update();
@@ -126,7 +129,7 @@ export default function TwoTimeLine({ pos }) {
     const rightBound = two.width / 2;
     const topBound = -two.height / 2;
     const bottomBound = two.height / 2;
-    console.log(pos);
+
     twoRef.current.dest = pos ? pos : 0;
 
     let cnt = 1;
@@ -143,21 +146,23 @@ export default function TwoTimeLine({ pos }) {
       );
       cnt++;
     });
+    console.log("3");
+
+    two.update();
 
     two
       .bind("update", (frameCount) => {
-        group.translation.x = MathUtils.lerp(
-          group.translation.x,
-          twoRef.current.dest,
-          0.05
-        );
+        if (twoRef.current)
+          group.translation.x = MathUtils.lerp(
+            group.translation.x,
+            twoRef.current.dest,
+            0.05
+          );
       })
       .play();
-
+    console.log("4");
     two.update();
   }, []);
-
-  const [dragging, setDragging] = useState(false);
 
   const handleMouseDown = (e) => {
     setDragging(true);
@@ -183,9 +188,15 @@ export default function TwoTimeLine({ pos }) {
       window.removeEventListener("mouseup", handleMouseUp);
     };
   }, [dragging]);
+  console.log("5");
 
   return (
     <div className="z-0 relative flex justify-center items-center  h-screen w-screen">
+      <div
+        onMouseDown={handleMouseDown}
+        className="relative z-40"
+        ref={twoRef}
+      ></div>
       <div className="fixed z-50 ">
         <div className="mt-96">
           <button
@@ -206,11 +217,6 @@ export default function TwoTimeLine({ pos }) {
           </button>
         </div>
       </div>
-      <div
-        onMouseDown={handleMouseDown}
-        className="relative z-40"
-        ref={twoRef}
-      ></div>
     </div>
   );
 }

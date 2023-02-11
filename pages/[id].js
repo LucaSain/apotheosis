@@ -1,4 +1,5 @@
 import md from "markdown-it";
+import Link from "next/link";
 import Navbar from "../components/navbar";
 import redis from "../db/redis";
 import { order } from "./tree";
@@ -9,7 +10,12 @@ export default function Filozof({ data, ctx }) {
       <div className="flex-initial pb-16">
         <Navbar />
       </div>
-      <div className="w-screen flex-1  ">
+      <div className="w-screen flex-1">
+        <div className="z-10 fixed bottom-2 right-2 sm:top-24 sm:left-5">
+          <Link href={"/tree"}>
+            <button className="btn">Inapoi</button>
+          </Link>
+        </div>
         <div className="flex w-full justify-center ">
           <img
             className="h-32 mt-5 rounded-full border-2 border-secondary mask"

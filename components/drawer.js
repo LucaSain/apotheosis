@@ -47,7 +47,7 @@ export default function Drawer({
           </div>
           <div className="divider"></div>
 
-          <div className="italic text-xl">{current.quote}</div>
+          <div className="italic text-base">{current.quote}</div>
           <div className="divider"></div>
           <div>
             {current.to && current.to[0] ? (
@@ -56,7 +56,7 @@ export default function Drawer({
               ""
             )}
 
-            <div className=" ">
+            <div className="overflow-y-scroll max-h-40">
               {current.to
                 ? current.to.map((influence) => {
                     return <p key={influence + "s"}>{influence}</p>;
@@ -71,7 +71,7 @@ export default function Drawer({
               <h1 className="text-3xl">în timp:</h1>
               <br />
               <div className="w-full">
-                <Link href={"/timeline?pos=" + current.time}>
+                <a href={"/timeline?pos=" + current.time}>
                   <input
                     type="range"
                     min="0"
@@ -81,7 +81,7 @@ export default function Drawer({
                     step="25"
                     readOnly
                   />
-                </Link>
+                </a>
                 <div className="w-full flex justify-between text-xs px-2">
                   <span>|</span>
                   <span>|</span>
