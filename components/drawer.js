@@ -41,21 +41,21 @@ export default function Drawer({
         </label>
       </div>
       <div className="drawer-side">
-        {visible === false ? (
-          <div
-            onClick={() => {
-              updateVisibility(true);
-              checkbox.current.checked = false;
-            }}
-            className="w-12 h-4 absolute btn rounded-full z-[9999] top-2 right-2"
-          >
-            x
-          </div>
-        ) : (
-          ""
-        )}
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
         <div className="menu p-4 w-80 bg-base-100 text-base-content h-full flex flex-col ">
+          {visible === false ? (
+            <div
+              onClick={() => {
+                updateVisibility(true);
+                checkbox.current.checked = false;
+              }}
+              className="sm:invisible w-12 h-4 absolute btn rounded-full z-[9999] top-2 right-2"
+            >
+              x
+            </div>
+          ) : (
+            ""
+          )}
           <div className="flex-initial h-max w-full">
             <div className="w-full flex flex-row items-center h-full justify-center ">
               <h1 className="text-3xl h-24 flex-1 w-full">{current.id}</h1>
