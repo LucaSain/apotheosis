@@ -9,6 +9,7 @@ let scale_cassiopea = -40;
 let scale_andromeda = 40;
 let scale_scorpio = -40;
 let scale_pegasus = -40;
+
 export const data = [
   {
     id: "Thales",
@@ -1580,6 +1581,15 @@ export const data = [
     time: 1946,
   },
 ];
+export function Find(id, data) {
+  let query = id;
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].id === query) {
+      return data[i];
+    }
+  }
+  return data[0];
+}
 
 export const order = [
   "Thales",
@@ -1725,18 +1735,14 @@ export default function Tree() {
     time: -625,
   });
 
-  function Find(id, data) {
-    let query = id;
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].id === query) {
-        return data[i];
-      }
-    }
-    return data[0];
-  }
-
   const updateCurrent = (cur) => {
     setCurrent(Find(cur, data));
+  };
+
+  const [visible, setVisible] = useState();
+
+  const updateVisibility = (val) => {
+    setVisible(val);
   };
 
   useEffect(() => {
@@ -1787,11 +1793,19 @@ export default function Tree() {
 
   return (
     <div className="relative z-0">
+      {visible ? (
+        <Legend current={current} epoque={epoque} updateOpen={updateOpen} />
+      ) : (
+        ""
+      )}
       <Drawer
         current={current}
         updateCurrent={updateCurrent}
         prev={prev}
         next={next}
+        epoque={epoque}
+        updateVisibility={updateVisibility}
+        visible={visible}
       >
         <Main
           updateCurrent={updateCurrent}
@@ -1800,7 +1814,7 @@ export default function Tree() {
           centerN={centerN}
         />
       </Drawer>
-      <Legend current={current} epoque={epoque} updateOpen={updateOpen} />
+
       {open ? (
         <div className="absolute z-[90] top-0 flex h-screen w-screen justify-center items-center backdrop-blur-md">
           <div className="flex flex-col" ref={searchRef}>

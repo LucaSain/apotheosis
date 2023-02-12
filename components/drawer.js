@@ -6,14 +6,18 @@ export default function Drawer({
   children,
   current,
   updateCurrent,
+  updateVisibility,
   next,
   prev,
+  epoque,
+  visible,
 }) {
   const [open, setOpen] = useState(false);
   const checkbox = useRef();
   useEffect(() => {
     setOpen(true);
     checkbox.current.checked = true;
+    updateVisibility(false);
   }, [current]);
 
   return (
@@ -23,6 +27,9 @@ export default function Drawer({
         id="my-drawer"
         type="checkbox"
         className="drawer-toggle"
+        onChange={(e) => {
+          updateVisibility(!e.target.checked);
+        }}
       />
       <div className="drawer-content">
         {children}
@@ -34,6 +41,19 @@ export default function Drawer({
         </label>
       </div>
       <div className="drawer-side">
+        {visible === false ? (
+          <div
+            onClick={() => {
+              updateVisibility(true);
+              checkbox.current.checked = false;
+            }}
+            className="w-12 h-4 absolute btn rounded-full z-[9999] top-2 right-2"
+          >
+            x
+          </div>
+        ) : (
+          ""
+        )}
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
         <div className="menu p-4 w-80 bg-base-100 text-base-content h-full flex flex-col ">
           <div className="flex-initial h-max w-full">
@@ -68,7 +88,7 @@ export default function Drawer({
           <div className="divider"></div>
           <div className="flex-none">
             <div className="flex-col w-full justify-start items-start">
-              <h1 className="text-3xl">în timp:</h1>
+              <h1 className="text-3xl">În timp: {epoque}</h1>
               <br />
               <div className="w-full">
                 <a href={"/timeline?pos=" + current.time}>
@@ -76,23 +96,42 @@ export default function Drawer({
                     type="range"
                     min="0"
                     max="100"
-                    value="50"
+                    value={
+                      epoque === "Antichitate"
+                        ? 10
+                        : epoque === "Epoca Medivala"
+                        ? 25
+                        : epoque === "Epoca Moderna Timpurie"
+                        ? 50
+                        : epoque === "Secolul al XIX-lea"
+                        ? 75
+                        : 90
+                    }
                     className="range"
-                    step="25"
                     readOnly
                   />
                 </a>
                 <div className="w-full flex justify-between text-xs px-2">
-                  <span>|</span>
-                  <span>|</span>
                   <span>
-                    |{" "}
-                    {current.time < 0
-                      ? current.time * -1 + " î.Hr"
-                      : current.time}
+                    |
+                    {epoque === "Antichitate"
+                      ? current.time < 0
+                        ? current.time * -1 + " î.Hr"
+                        : current.time
+                      : ""}
                   </span>
-                  <span>|</span>
-                  <span>|</span>
+                  <span>
+                    |{epoque === "Epoca Medivala" ? current.time : ""}
+                  </span>
+                  <span>
+                    |{epoque === "Epoca Moderna Timpurie" ? current.time : ""}
+                  </span>
+                  <span>
+                    |{epoque === "Secolul al XIX-lea" ? current.time : ""}
+                  </span>
+                  <span>
+                    |{epoque === "Secolul al XX-lea" ? current.time : ""}
+                  </span>
                 </div>
               </div>
             </div>

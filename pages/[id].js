@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "../components/navbar";
 import redis from "../db/redis";
 import { order } from "./tree";
+import { data as datax, Find } from "./tree";
 
 export default function Filozof({ data, ctx }) {
   return (
@@ -22,8 +23,15 @@ export default function Filozof({ data, ctx }) {
             src={"/philosopher/" + ctx.replace(/ /g, "").toLowerCase() + ".png"}
           />
         </div>
+
         <div className="prose mx-auto mt-4 p-3">
           <div dangerouslySetInnerHTML={{ __html: md().render(data) }} />
+          <h1>A influențat:</h1>
+          <div className="flex flex-col mb-10">
+            {Find(ctx, datax).to.map((x) => {
+              return <div>{x}</div>;
+            })}
+          </div>
         </div>
       </div>
     </div>

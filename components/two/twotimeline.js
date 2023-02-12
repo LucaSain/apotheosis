@@ -4,7 +4,6 @@ import { MathUtils } from "three";
 import { data } from "../../pages/tree";
 
 export default function TwoTimeLine({ pos }) {
-  console.log("1");
   let twoRef = useRef();
   let two = new Two({
     autostart: true,
@@ -13,13 +12,11 @@ export default function TwoTimeLine({ pos }) {
     width: window.innerWidth,
   });
   let group = two.makeGroup();
-  const [dragging, setDragging] = useState(false);
 
   const ratio = 0.74;
   const centerX = two.width / 2;
   const centerY = two.height / 2;
-  const padding = 5;
-  const offsetY = 0;
+
   const styles = {
     family: "proxima-nova, sans-serif",
     size: 20,
@@ -119,34 +116,56 @@ export default function TwoTimeLine({ pos }) {
     }
 
     const timeline = two.makeRectangle(centerX, centerY, 15000, 10);
-    group.add(timeline);
 
     timeline.fill = "#f4c821";
     timeline.noStroke();
-    timeline.translation.x += 15000 / 2 - two.width / 2 + 10;
+    timeline.translation.x += 15000 / 2 - two.width / 2;
+
+    for (let i = 500; i < 30000; i += 500) {
+      let rect = two.makeRectangle(
+        i + 15000 - two.width / 2,
+        two.height / 2,
+        1,
+        100
+      );
+      let text = two.makeText(
+        750 + i / 10 > 1550 ? i / 50 + 1100 + 300 - 10 : 750 + i / 10,
+        i + 15000 - two.width / 2,
+        centerY + 70,
+        styles2
+      );
+      text.fill = "white";
+      group.add(rect);
+      group.add(text);
+      rect.noStroke();
+    }
 
     const leftBound = -two.width / 2;
     const rightBound = two.width / 2;
     const topBound = -two.height / 2;
     const bottomBound = two.height / 2;
 
-    twoRef.current.dest = pos ? pos : 0;
+    twoRef.current.dest = pos
+      ? pos <= 1550
+        ? -(7000 + pos * 10)
+        : -(-55000 + pos * 50)
+      : 0;
+
+    twoRef.current.dest -= -720;
 
     let cnt = 1;
     //Here
     data.map((person) => {
-      console.log(cnt);
       addCard(
         "/philosopher" + person.image,
         cnt % 2,
-        person.time < 0
-          ? 7000 + (person.time / 50) * 500
-          : 7000 + (person.time / 50) * 500,
+        person.time <= 1550
+          ? 7000 + person.time * 10
+          : -55000 + person.time * 50, //1550 - 400 + i / 20
         person.id
       );
       cnt++;
     });
-    console.log("3");
 
     two.update();
 
@@ -160,61 +179,51 @@ export default function TwoTimeLine({ pos }) {
           );
       })
       .play();
-    console.log("4");
+
     two.update();
   }, []);
-
-  const handleMouseDown = (e) => {
-    setDragging(true);
-  };
-
-  const handleMouseMove = (e) => {
-    if (!dragging) {
-      return;
-    }
-    let dx = (e.clientX - centerX) / 40;
-    twoRef.current.dest += dx;
-  };
-
-  const handleMouseUp = (e) => {
-    setDragging(false);
-  };
-
-  useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseup", handleMouseUp);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", handleMouseUp);
-    };
-  }, [dragging]);
-  console.log("5");
+  const [cnt, setCnt] = useState(100);
 
   return (
     <div className="z-0 relative flex justify-center items-center  h-screen w-screen">
-      <div
-        onMouseDown={handleMouseDown}
-        className="relative z-40"
-        ref={twoRef}
-      ></div>
+      <div className="relative z-40" ref={twoRef}></div>
       <div className="fixed z-50 ">
-        <div className="mt-96">
-          <button
-            className="btn"
-            onClick={() => {
-              if (twoRef.current.dest < 0) twoRef.current.dest += 100;
-            }}
-          >
-            prev
-          </button>
-          <button
-            className="btn ml-2"
-            onClick={() => {
-              twoRef.current.dest -= 100;
-            }}
-          >
-            next
-          </button>
+        <div className="mt-96 flex flex-col">
+          <div className="flex justify-center items-center">
+            <button
+              className="btn"
+              onClick={() => {
+                if (twoRef.current.dest < 0) twoRef.current.dest += cnt;
+              }}
+            >
+              prev
+            </button>
+            <button
+              className="btn ml-2"
+              onClick={() => {
+                twoRef.current.dest -= cnt;
+              }}
+            >
+              next
+            </button>
+          </div>
+          <div>
+            <input
+              type="range"
+              min="-700"
+              max="1930"
+              className="range mt-2 w-96"
+              onChange={(e) => {
+                twoRef.current.dest = e.target.value
+                  ? e.target.value <= 1550
+                    ? -(7000 + e.target.value * 10)
+                    : -(-55000 + e.target.value * 50)
+                  : 0;
+
+                twoRef.current.dest -= -720;
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -6,9 +6,10 @@ import {
   Select,
   Text3D,
   Center,
+  Stars,
 } from "@react-three/drei";
 import * as THREE from "three";
-import { extend, useThree } from "@react-three/fiber";
+import { extend } from "@react-three/fiber";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 import { Vector3 } from "three";
 import { MathUtils } from "three";
@@ -57,7 +58,7 @@ const UpdateCam = ({ dest, moving }) => {
   return <mesh></mesh>; //R3F hooks can only be called in Canvas component
 };
 
-export function Connnection({ from, to, color }) {
+export function Connnection({ from, to, color, type }) {
   const connection = useRef();
   const [opacity, setOpacity] = useState(1);
   const len = Math.sqrt(
@@ -79,7 +80,11 @@ export function Connnection({ from, to, color }) {
 
   return (
     <mesh position={position} ref={connection}>
-      <cylinderGeometry args={[0.01, 0.01, len, 32]} />
+      <cylinderGeometry
+        args={
+          type && type === "mark" ? [0.1, 0.1, len, 32] : [0.01, 0.01, len, 32]
+        }
+      />
       <meshStandardMaterial opacity="1" color={color} />
     </mesh>
   );
@@ -140,7 +145,7 @@ export default function Main({ current, updateCurrent, data, centerN }) {
       <Suspense
         fallback={
           <div className="h-screen w-screen flex justify-center items-center">
-            Loading
+            Loading...
           </div>
         }
       >
@@ -154,9 +159,27 @@ export default function Main({ current, updateCurrent, data, centerN }) {
           }}
         >
           <ambientLight />
+          <Stars depth={200} count={10000} radius={100} />
+
           <OrbitControls target={centerN} />
+
           <Environment preset="sunset" />
           <pointLight position={[30, 30, 30]} />
+          {current.to
+            ? current.to.map((con) => {
+                let to = Find(con, data);
+                if (to)
+                  return (
+                    <Connnection
+                      color={"red"}
+                      key={to.position + "Shine"}
+                      to={to.position}
+                      from={current.position}
+                      type={"mark"}
+                    />
+                  );
+              })
+            : ""}
           <Select box onChange={setSelected}>
             {data.map((box) => {
               let res = box.to.map((connection) => {
