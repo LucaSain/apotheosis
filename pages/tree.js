@@ -197,7 +197,6 @@ export const data = [
       "Zenon Din Citium",
       "Platon",
       "Epicur",
-      "Aristotel",
       "Al-Kindi",
       "Al-Farabi",
       "Avicenna",
