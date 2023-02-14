@@ -96,6 +96,11 @@ export default function Drawer({
                     type="range"
                     min="0"
                     max="100"
+                    onClick={() => {
+                      window.location.href =
+                        "https://apotheosis-sandy.vercel.app/timeline?pos=" +
+                        current.time;
+                    }}
                     value={
                       epoque === "Antichitate"
                         ? 10
