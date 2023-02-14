@@ -79,7 +79,17 @@ export default function Drawer({
             <div className="overflow-y-scroll max-h-40">
               {current.to
                 ? current.to.map((influence) => {
-                    return <p key={influence + "s"}>{influence}</p>;
+                    return (
+                      <p
+                        className="hover:text-accent"
+                        onClick={() => {
+                          updateCurrent(influence);
+                        }}
+                        key={influence + "s"}
+                      >
+                        {influence}
+                      </p>
+                    );
                   })
                 : ""}
             </div>
