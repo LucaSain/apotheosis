@@ -93,12 +93,11 @@ export default function TwoTimeLine({ pos }) {
       shape._renderer.elem.addEventListener(
         "click",
         () => {
-          window.location.href = "http://localhost:3000/" + name;
+          window.location.href = "https://apotheosis-sandy.vercel.app/" + name;
         },
         false
       );
       two.update();
-      console.log("2");
     });
   };
 

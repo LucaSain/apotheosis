@@ -157,6 +157,15 @@ export default function Main({ current, updateCurrent, data, centerN }) {
           onMouseUp={() => {
             setMoving(false);
           }}
+          onDrag={() => {
+            setMoving(true);
+          }}
+          onDragEnd={() => {
+            setMoving(false);
+          }}
+          // onScroll={() => {
+          //   setMoving(true);
+          // }}
         >
           <ambientLight />
           <Stars depth={200} count={10000} radius={100} />
