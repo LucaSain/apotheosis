@@ -171,6 +171,7 @@ export default function Main({ current, updateCurrent, data, centerN }) {
           }}
           // onScroll={() => {
           //   setMoving(true);
+          //   setMoving(false);
           // }}
         >
           <ambientLight />
