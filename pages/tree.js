@@ -1124,7 +1124,7 @@ export const data = [
   {
     id: "James",
     current: "Realism",
-    color: "aqua",
+    color: "purple",
     image: "/james.png",
     position: [
       -1.8038540007905357, -3.3029164903248387, -1.3553056488380135,
@@ -1210,7 +1210,7 @@ export const data = [
   {
     id: "Dewey",
     current: "Realism",
-    color: "aqua",
+    color: "purple",
     image: "/dewey.png",
     position: [3.423405254183888, -0.8571664960104803, 1.882966293841519].map(
       (x) => x * scale_pegasus
@@ -1308,7 +1308,7 @@ export const data = [
   {
     id: "Carnap",
     current: "Realism",
-    color: "aqua",
+    color: "purple",
     image: "/carnap.png",
     position: [3.528882605566404, -1.833166390641143, 0.4318431895429117].map(
       (x) => x * scale_pegasus
@@ -1361,7 +1361,7 @@ export const data = [
   {
     id: "Quine",
     current: "Realism",
-    color: "aqua",
+    color: "purple",
     image: "/quine.png",
     position: [2.9951489955716704, -2.008012289613154, 1.7311756522919777].map(
       (x) => x * scale_pegasus
@@ -1387,7 +1387,7 @@ export const data = [
   {
     id: "Davidson",
     current: "Realism",
-    color: "yellow",
+    color: "purple",
     image: "/davidson.png",
     position: [3.1700246592917822, -2.1279302516510055, 1.1928354889046981].map(
       (x) => x * scale_pegasus
@@ -1440,7 +1440,7 @@ export const data = [
   {
     id: "Rawls",
     current: "Realism",
-    color: "aqua",
+    color: "purple",
     image: "/rawls.png",
     position: [3.8411468173658543, -0.9043933607172384, 0.6539600725814587].map(
       (x) => x * scale_pegasus
@@ -1453,7 +1453,7 @@ export const data = [
   {
     id: "Kuhn",
     current: "Realism",
-    color: "aqua",
+    color: "purple",
     image: "/kuhn.png",
     position: [3.865926797824457, -0.523478231853376, 0.8835046885208965].map(
       (x) => x * scale_pegasus
@@ -1479,7 +1479,7 @@ export const data = [
   {
     id: "Derrida",
     current: "Realism",
-    color: "red",
+    color: "aqua",
     image: "/derrida.png",
     position: [3.620872976546567, -0.03540414100721055, 1.6994191462127128].map(
       (x) => x * scale_pegasus
@@ -1531,7 +1531,7 @@ export const data = [
   {
     id: "Kripke",
     current: "Realism",
-    color: "aqua",
+    color: "purple",
     image: "/kripke.png",
     position: [3.2867096684344927, -1.1678109607931502, 1.95799824189671].map(
       (x) => x * scale_pegasus
@@ -1544,7 +1544,7 @@ export const data = [
   {
     id: "Lewis",
     current: "Realism",
-    color: "aqua",
+    color: "purple",
     image: "/lewis.png",
     position: [3.5541542631528373, -1.6287604527156856, 0.8456517376449391].map(
       (x) => x * scale_pegasus
