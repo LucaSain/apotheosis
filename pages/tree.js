@@ -1722,16 +1722,45 @@ export default function Tree() {
   useOutsideAlerter(searchRef);
 
   const [current, setCurrent] = useState({
-    id: "Thales",
-    current: "Existentialism",
-    position: [
-      -1.1471508414375322, -3.2078956413699338, 2.0960559393940192,
-    ].map((x) => x * scale),
+    id: "Aristotel",
+    current: "Phenomenology",
     color: "white",
-    to: ["Pitagora", "Heidegger"],
-    image: "/thales.png",
-    quote: "Lumea poate fi explicata fara a apela la zeii abisurilor",
-    time: -625,
+    image: "/aristotel.png",
+    position: [-0.2090384083444175, -3.534668242616069, 1.860758812548865].map(
+      (x) => x * scale
+    ),
+    to: [
+      "Zenon Din Citium",
+      "Platon",
+      "Epicur",
+      "Al-Kindi",
+      "Al-Farabi",
+      "Avicenna",
+      "Anselm",
+      "Abelard",
+      "Averroes",
+      "Maimonide",
+      "Roger Bacon",
+      "Toma d'Aquino",
+      "William din Ockham",
+      "Duns Scotus",
+      "Machiavelli",
+      "Suarez",
+      "Hobbes",
+      "Descartes",
+      "Locke",
+      "Montesquieu",
+      "Hegel",
+      "Mill",
+      "Heidegger",
+      "Feng",
+      "Davidson",
+      "Strawson",
+      "Anscombe",
+      "Wiggins",
+    ],
+    quote: "Experienta este sursa cunoasterii, iar logica este structura ei.",
+    time: -384,
   });
 
   const updateCurrent = (cur) => {
