@@ -97,6 +97,13 @@ export default function TwoTimeLine({ pos }) {
         },
         false
       );
+      shape._renderer.elem.addEventListener(
+        "touch",
+        () => {
+          window.location.href = "https://apotheosis-sandy.vercel.app/" + name;
+        },
+        false
+      );
       two.update();
     });
   };
