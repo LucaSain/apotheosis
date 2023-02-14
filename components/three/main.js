@@ -163,6 +163,12 @@ export default function Main({ current, updateCurrent, data, centerN }) {
           onDragEnd={() => {
             setMoving(false);
           }}
+          onTouchStart={() => {
+            setMoving(true);
+          }}
+          onTouchEnd={() => {
+            setMoving(false);
+          }}
           // onScroll={() => {
           //   setMoving(true);
           // }}
