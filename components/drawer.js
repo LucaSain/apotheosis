@@ -116,7 +116,14 @@ export default function Drawer({
                     readOnly
                   />
                 </a>
-                <div className="w-full flex justify-between text-xs px-2">
+                <div
+                  onClick={() => {
+                    window.location.href =
+                      "https://apotheosis-sandy.vercel.app/timeline?pos=" +
+                      current.time;
+                  }}
+                  className="w-full flex justify-between text-xs px-2"
+                >
                   <span>
                     |
                     {epoque === "Antichitate"
