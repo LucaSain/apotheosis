@@ -29,7 +29,7 @@ export default function Filozof({ data, ctx }) {
           <h1>A influențat:</h1>
           <div className="flex flex-col mb-10">
             {Find(ctx, datax).to.map((x) => {
-              return <div>{x}</div>;
+              return <div key={x + "ss"}>{x}</div>;
             })}
           </div>
         </div>
