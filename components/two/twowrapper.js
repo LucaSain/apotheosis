@@ -49,6 +49,7 @@ export default function TwoWrapper() {
 
     group.translation.set(two.width / 2, two.height / 2);
     let def_angle = 0.001;
+
     two.bind("update", (frameCount) => {
       stars.forEach((star) => {
         const x1 = star.translation.x;
@@ -56,17 +57,7 @@ export default function TwoWrapper() {
         let angle = def_angle * star.speed;
         star.translation.x = x1 * Math.cos(angle) - y1 * Math.sin(angle); // + star.speed;
         star.translation.y = x1 * Math.sin(angle) + y1 * Math.cos(angle); // + star.speed;
-        /*
-        // Wrap around right
-        if (star.translation.x >= rightBound) star.translation.x = leftBound;
 
-        // Wrap around left
-        if (star.translation.x <= leftBound) star.translation.x = rightBound;
-        // Wrap around top
-        if (star.translation.y <= topBound) star.translation.y = bottomBound;
-
-        // Wrap around bottom
-        if (star.translation.y >= bottomBound) star.translation.y = topBound;*/
       });
     });
   }, []);

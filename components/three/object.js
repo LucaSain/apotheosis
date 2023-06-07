@@ -12,7 +12,6 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 export function Model({ position, name, colori, size }) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/waterworld.glb");
-  const [hovered, setHover] = useState(false);
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {

@@ -1,4 +1,3 @@
-import { data } from "autoprefixer";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 
@@ -79,18 +78,18 @@ export default function Drawer({
             <div className="overflow-y-scroll max-h-40">
               {current.to
                 ? current.to.map((influence) => {
-                    return (
-                      <p
-                        className="hover:text-accent"
-                        onClick={() => {
-                          updateCurrent(influence);
-                        }}
-                        key={influence + "s"}
-                      >
-                        {influence}
-                      </p>
-                    );
-                  })
+                  return (
+                    <p
+                      className="hover:text-accent"
+                      onClick={() => {
+                        updateCurrent(influence);
+                      }}
+                      key={influence + "s"}
+                    >
+                      {influence}
+                    </p>
+                  );
+                })
                 : ""}
             </div>
           </div>
@@ -115,12 +114,12 @@ export default function Drawer({
                       epoque === "Antichitate"
                         ? 10
                         : epoque === "Epoca Medivala"
-                        ? 25
-                        : epoque === "Epoca Moderna Timpurie"
-                        ? 50
-                        : epoque === "Secolul al XIX-lea"
-                        ? 75
-                        : 90
+                          ? 25
+                          : epoque === "Epoca Moderna Timpurie"
+                            ? 50
+                            : epoque === "Secolul al XIX-lea"
+                              ? 75
+                              : 90
                     }
                     className="range"
                     readOnly

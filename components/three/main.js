@@ -16,8 +16,7 @@ import { MathUtils } from "three";
 import { Model } from "./object";
 
 let direction = new THREE.Vector3(0, 0, 0);
-let cameraPosition = new THREE.Vector3(0, 0, 0);
-const letterSize = 833 / 1000;
+
 extend({ TextGeometry });
 
 const UpdateCam = ({ dest, moving }) => {
@@ -48,7 +47,7 @@ const UpdateCam = ({ dest, moving }) => {
       }
     }
     if (dest) {
-      //state.camera.position.lerp(vec.set(destx, desty, destz), 0.01);
+
       direction.x = MathUtils.lerp(direction.x, dest.x, 0.05); //linear interpolation
       direction.y = MathUtils.lerp(direction.y, dest.y, 0.05);
       direction.z = MathUtils.lerp(direction.z, dest.z, 0.05);
@@ -63,8 +62,8 @@ export function Connnection({ from, to, color, type }) {
   const [opacity, setOpacity] = useState(1);
   const len = Math.sqrt(
     Math.pow(from[0] - to[0], 2) +
-      Math.pow(from[1] - to[1], 2) +
-      Math.pow(from[2] - to[2], 2)
+    Math.pow(from[1] - to[1], 2) +
+    Math.pow(from[2] - to[2], 2)
   );
 
   const position = [
@@ -169,10 +168,7 @@ export default function Main({ current, updateCurrent, data, centerN }) {
           onTouchEnd={() => {
             setMoving(false);
           }}
-          // onScroll={() => {
-          //   setMoving(true);
-          //   setMoving(false);
-          // }}
+
         >
           <ambientLight />
           <Stars depth={200} count={10000} radius={100} />
@@ -183,18 +179,18 @@ export default function Main({ current, updateCurrent, data, centerN }) {
           <pointLight position={[30, 30, 30]} />
           {current.to
             ? current.to.map((con) => {
-                let to = Find(con, data);
-                if (to)
-                  return (
-                    <Connnection
-                      color={"red"}
-                      key={to.position + "Shine"}
-                      to={to.position}
-                      from={current.position}
-                      type={"mark"}
-                    />
-                  );
-              })
+              let to = Find(con, data);
+              if (to)
+                return (
+                  <Connnection
+                    color={"red"}
+                    key={to.position + "Shine"}
+                    to={to.position}
+                    from={current.position}
+                    type={"mark"}
+                  />
+                );
+            })
             : ""}
           <Select box onChange={setSelected}>
             {data.map((box) => {
@@ -236,7 +232,7 @@ export default function Main({ current, updateCurrent, data, centerN }) {
               bevelThickness={0.1}
               height={0.1}
               lineHeight={0.5}
-              // letterSpacing={-0.06}
+
               size={0.4}
               font="/Cousine_Bold.json"
             >

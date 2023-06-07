@@ -1,7 +1,7 @@
 import Two from "two.js";
 import { useEffect, useRef, useState } from "react";
 import { MathUtils } from "three";
-import { data } from "../../pages/tree";
+import { data } from "../../utils/data";
 
 export default function TwoTimeLine({ pos }) {
   let twoRef = useRef();

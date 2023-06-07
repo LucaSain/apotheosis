@@ -1,9 +1,9 @@
 import md from "markdown-it";
 import Link from "next/link";
 import Navbar from "../components/navbar";
-import redis from "../db/redis";
-import { order } from "./tree";
-import { data as datax, Find } from "./tree";
+import redis from "../utils/redis";
+import { order, data as datax } from "../utils/data";
+import { Find } from "./tree";
 
 export default function Filozof({ data, ctx }) {
   return (
@@ -43,7 +43,7 @@ export async function getStaticPaths() {
     paths: order.map((x) => {
       return { params: { id: x } };
     }),
-    fallback: false, // can also be true or 'blocking'
+    fallback: false,
   };
 }
 
