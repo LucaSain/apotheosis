@@ -2,7 +2,7 @@
 
 ## About
 
-Apotheosis is a project that helps to visualize the relationships between philosophers.
+A 3D mindmap showcasing the relations between philosophers.
 
 Currently only in Romanian.
 
