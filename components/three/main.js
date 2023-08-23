@@ -143,7 +143,7 @@ export default function Main({ current, updateCurrent, data, centerN }) {
     <div className="h-screen">
       <Suspense
         fallback={
-          <div className="h-screen w-screen flex justify-center items-center">
+          <div key="fallback" className="h-screen w-screen flex justify-center items-center">
             Loading...
           </div>
         }
@@ -174,8 +174,6 @@ export default function Main({ current, updateCurrent, data, centerN }) {
           <Stars depth={200} count={10000} radius={100} />
 
           <OrbitControls target={centerN} />
-
-          <Environment preset="sunset" />
           <pointLight position={[30, 30, 30]} />
           {current.to
             ? current.to.map((con) => {
