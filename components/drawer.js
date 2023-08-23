@@ -80,7 +80,7 @@ export default function Drawer({
                 ? current.to.map((influence) => {
                   return (
                     <p
-                      className="hover:text-accent"
+                      className="hover:text-accent cursor-pointer"
                       onClick={() => {
                         updateCurrent(influence);
                       }}
