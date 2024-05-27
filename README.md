@@ -19,4 +19,8 @@ Currently only in Romanian.
 + 3D: ThreeJS, React-Three-Fiber and React-Three-Drei.
 + DB: Upstash Redis.
 
+## Env
+REDIS_URL -> String
+REDIS_TOKEN -> String
+
 Serverside generated.
