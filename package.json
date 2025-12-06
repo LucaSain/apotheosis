@@ -15,7 +15,7 @@
     "@upstash/redis": "^1.19.1",
     "daisyui": "^2.46.1",
     "markdown-it": "^13.0.1",
-    "next": "13.1.2",
+    "next": "^13.5.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "three": "^0.148.0",

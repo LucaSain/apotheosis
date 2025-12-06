@@ -1,0 +1,21 @@
+{
+  "repository": {
+    "name": "nasturel.com",
+    "currentVersion": "14.2.4",
+    "description": "Website-ul pentru festivalul Nasturel 🧚‍♀️",
+    "private": false
+  },
+  "instructions": {
+    "repository": "nasturel.com",
+    "currentVersion": "14.2.4",
+    "majorVersion": "14",
+    "patchVersion": "14.2.33",
+    "upgradeVersion": "16.0.7",
+    "needsPatch": true,
+    "branchName": "security/patch-nextjs-cve-2025-66478",
+    "prTitle": "[Security] Patch Next.js CVE-2025-66478",
+    "prBody": "## Security Patch: CVE-2025-66478\n\n### Summary\nThis PR addresses security vulnerability CVE-2025-66478 by updating Next.js from version 14.2.4 to 14.2.33.\n\n### Changes\n- ✅ Updated Next.js to 14.2.33 (latest patch in 14.x series)\n- ✅ Regenerated package-lock.json\n- ✅ Verified build passes\n- ✅ Tested application functionality\n\n### Security Impact\nThis update patches CVE-2025-66478. For more details, see: https://nextjs.org/blog/CVE-2025-66478\n\n### Testing\n- `npm install` completes successfully\n- `npm run build` completes without errors\n- `npm run dev` starts development server correctly\n\n### Next Steps\nA follow-up issue has been created to track the major version upgrade to Next.js 16.0.7.\n\n### References\n- Advisory: https://nextjs.org/blog/CVE-2025-66478\n- Next.js 14.2.33 Release Notes: https://github.com/vercel/next.js/releases/tag/v14.2.33\n\n---\n**Security Priority**: High\n**Scope**: Patch within current major version\n**Follow-up**: Issue #[NUMBER] - Upgrade to Next.js 16.0.7",
+    "issueTitle": "[Enhancement] Upgrade Next.js to version 16.0.7",
+    "issueBody": "## Enhancement: Upgrade Next.js to 16.0.7\n\n### Current Status\n- **Current Version**: 14.2.4\n- **Security Patch Applied**: 14.2.33 (via PR #[NUMBER])\n- **Target Version**: 16.0.7\n\n### Motivation\nWhile the security vulnerability CVE-2025-66478 has been patched within the current major version, upgrading to the latest major version will provide:\n- Latest features and improvements\n- Better performance\n- Long-term security updates\n- Modern React features support\n\n### Upgrade Path\nThis is a major version upgrade that may require code changes:\n\n1. **Review Breaking Changes**\n   - Next.js 14.x → 16.0.7 migration guide\n   - React compatibility changes\n   - API changes and deprecations\n\n2. **Update Dependencies**\n   - Update all Next.js related packages\n   - Update React and React-DOM if needed\n   - Update TypeScript and other dependencies\n\n3. **Code Changes**\n   - Update any deprecated API usage\n   - Refactor breaking changes\n   - Update configuration files\n\n4. **Testing**\n   - Comprehensive testing of all features\n   - Performance testing\n   - Compatibility testing\n\n### Implementation Plan\n- [ ] Review Next.js 16.0.7 release notes and migration guide\n- [ ] Identify breaking changes affecting this project\n- [ ] Create feature branch for upgrade\n- [ ] Update dependencies\n- [ ] Fix breaking changes\n- [ ] Update tests\n- [ ] Verify all functionality works\n- [ ] Update documentation\n- [ ] Create PR for review\n\n### References\n- Next.js 16.0.7 Release: https://github.com/vercel/next.js/releases/tag/v16.0.7\n- Migration Guide: https://nextjs.org/docs/upgrading\n- Related Security Patch PR: #[NUMBER]\n\n### Priority\nMedium - Can be scheduled for next development cycle after security patch is deployed."
+  }
+}
