@@ -44,9 +44,9 @@ export default function Navbar() {
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a href="/timeline">
+            <Link href="/timeline">
               <h1>Timeline</h1>
-            </a>
+            </Link>
           </li>
 
           <li>
