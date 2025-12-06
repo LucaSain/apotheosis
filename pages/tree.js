@@ -200,6 +200,7 @@ export default function Tree() {
               {searchData.map((x) => {
                 return (
                   <div
+                    key={x}
                     onClick={() => {
                       setCurrent(Find(x, data));
                       updateOpen(false);
