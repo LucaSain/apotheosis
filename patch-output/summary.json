@@ -1,0 +1,67 @@
+{
+  "cve": "CVE-2025-66478",
+  "advisory": "https://nextjs.org/blog/CVE-2025-66478",
+  "githubUser": "LucaSain",
+  "scanDate": "2025-12-06T21:52:54.297Z",
+  "totalRepositories": 8,
+  "requiresPatching": 8,
+  "upToDate": 0,
+  "repositories": [
+    {
+      "name": "apotheosis",
+      "currentVersion": "13.1.2",
+      "needsPatch": true,
+      "patchVersion": "13.5.11",
+      "upgradeVersion": "16.0.7"
+    },
+    {
+      "name": "Spectra-Design",
+      "currentVersion": "15.4.2",
+      "needsPatch": true,
+      "patchVersion": "15.5.7",
+      "upgradeVersion": "16.0.7"
+    },
+    {
+      "name": "contests.world",
+      "currentVersion": "^14.0.1",
+      "needsPatch": true,
+      "patchVersion": "14.2.33",
+      "upgradeVersion": "16.0.7"
+    },
+    {
+      "name": "portfolio",
+      "currentVersion": "14.2.5",
+      "needsPatch": true,
+      "patchVersion": "14.2.33",
+      "upgradeVersion": "16.0.7"
+    },
+    {
+      "name": "nasturel.com",
+      "currentVersion": "14.2.4",
+      "needsPatch": true,
+      "patchVersion": "14.2.33",
+      "upgradeVersion": "16.0.7"
+    },
+    {
+      "name": "tabere.nasturel.com",
+      "currentVersion": "14.2.5",
+      "needsPatch": true,
+      "patchVersion": "14.2.33",
+      "upgradeVersion": "16.0.7"
+    },
+    {
+      "name": "petreceri-pentru-copii-sibiu",
+      "currentVersion": "14.2.5",
+      "needsPatch": true,
+      "patchVersion": "14.2.33",
+      "upgradeVersion": "16.0.7"
+    },
+    {
+      "name": "portfolio-vavilov",
+      "currentVersion": "14.2.5",
+      "needsPatch": true,
+      "patchVersion": "14.2.33",
+      "upgradeVersion": "16.0.7"
+    }
+  ]
+}
