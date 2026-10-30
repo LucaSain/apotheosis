@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
+import { asset } from "../utils/asset";
 
 export default function Drawer({
   children,
@@ -36,7 +37,7 @@ export default function Drawer({
           htmlFor="my-drawer"
           className="top-4 left-2 absolute btn bg-base-300 drawer-button rounded-full "
         >
-          <img className="h-10 hover:overlay" src="/apotheosis.png" />
+          <img className="h-10 hover:overlay" src={asset("/apotheosis.png")} />
         </label>
       </div>
       <div className="drawer-side">
@@ -60,7 +61,7 @@ export default function Drawer({
               <h1 className="text-3xl h-24 flex-1 w-full">{current.id}</h1>
 
               <div className="h-20 mask mask-squircle flex items-center w-24">
-                <img src={"/philosopher" + current.image} />
+                <img src={asset("/philosopher" + current.image)} />
               </div>
             </div>
           </div>
@@ -99,40 +100,29 @@ export default function Drawer({
             <div className="flex-col w-full justify-start items-start">
               <h1 className="text-3xl">În timp: {epoque}</h1>
               <br />
-              <div className="w-full">
-                <a href={"/timeline?pos=" + current.time}>
-                  <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    onClick={() => {
-                      window.location.href =
-                        "https://apotheosis-sandy.vercel.app/timeline?pos=" +
-                        current.time;
-                    }}
-                    value={
-                      epoque === "Antichitate"
-                        ? 10
-                        : epoque === "Epoca Medivala"
-                          ? 25
-                          : epoque === "Epoca Moderna Timpurie"
-                            ? 50
-                            : epoque === "Secolul al XIX-lea"
-                              ? 75
-                              : 90
-                    }
-                    className="range"
-                    readOnly
-                  />
-                </a>
-                <div
-                  onClick={() => {
-                    window.location.href =
-                      "https://apotheosis-sandy.vercel.app/timeline?pos=" +
-                      current.time;
-                  }}
-                  className="w-full flex justify-between text-xs px-2"
-                >
+              <Link
+                href={{ pathname: "/timeline", query: { pos: current.time } }}
+                className="block w-full"
+              >
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={
+                    epoque === "Antichitate"
+                      ? 10
+                      : epoque === "Epoca Medivala"
+                        ? 25
+                        : epoque === "Epoca Moderna Timpurie"
+                          ? 50
+                          : epoque === "Secolul al XIX-lea"
+                            ? 75
+                            : 90
+                  }
+                  className="range pointer-events-none"
+                  readOnly
+                />
+                <div className="w-full flex justify-between text-xs px-2">
                   <span>
                     |
                     {epoque === "Antichitate"
@@ -154,7 +144,7 @@ export default function Drawer({
                     |{epoque === "Secolul al XX-lea" ? current.time : ""}
                   </span>
                 </div>
-              </div>
+              </Link>
             </div>
             <div className="flex flex-row mt-10 w-full justify-between">
               <button
@@ -165,8 +155,11 @@ export default function Drawer({
               >
                 Prev
               </button>
-              <Link href={current.id}>
-                <button className="btn btn-secondary">Mai mult</button>
+              <Link
+                href={{ pathname: "/timeline", query: { pos: current.time } }}
+                className="btn btn-secondary"
+              >
+                Timeline
               </Link>
               <button
                 onClick={() => {

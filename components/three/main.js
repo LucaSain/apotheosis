@@ -14,6 +14,7 @@ import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 import { Vector3 } from "three";
 import { MathUtils } from "three";
 import { Model } from "./object";
+import { asset } from "../../utils/asset";
 
 let direction = new THREE.Vector3(0, 0, 0);
 
@@ -232,7 +233,7 @@ export default function Main({ current, updateCurrent, data, centerN }) {
               lineHeight={0.5}
 
               size={0.4}
-              font="/Cousine_Bold.json"
+              font={asset("/Cousine_Bold.json")}
             >
               {current.id}
               <meshNormalMaterial />

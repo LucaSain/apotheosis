@@ -1,10 +1,15 @@
-import Main from "../components/three/main";
+import dynamic from "next/dynamic";
 import Drawer from "../components/drawer";
 import Legend from "../components/legend";
 import { useState, useRef } from "react";
 import { Vector3 } from "three";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 import { data, order } from "../utils/data"
+
+const Main = dynamic(() => import("../components/three/main"), {
+  ssr: false,
+});
 let scale = 40;
 
 
@@ -95,6 +100,14 @@ export default function Tree() {
   const updateCurrent = (cur) => {
     setCurrent(Find(cur, data));
   };
+
+  // /tree?id=<name> opens the mindmap focused on that philosopher
+  const router = useRouter();
+  useEffect(() => {
+    if (router.isReady && router.query.id && order.includes(router.query.id)) {
+      updateCurrent(router.query.id);
+    }
+  }, [router.isReady, router.query.id]);
 
   const [visible, setVisible] = useState();
 
@@ -200,6 +213,7 @@ export default function Tree() {
               {searchData.map((x) => {
                 return (
                   <div
+                    key={x}
                     onClick={() => {
                       setCurrent(Find(x, data));
                       updateOpen(false);

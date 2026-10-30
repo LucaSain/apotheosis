@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { asset } from "../utils/asset";
 
 export default function Navbar() {
   return (
@@ -36,7 +37,7 @@ export default function Navbar() {
         </div>
         <Link href="/">
           <div className="btn btn-ghost normal-case">
-            <img className="w-16" src="/apotheosis.png"></img>
+            <img className="w-16" src={asset("/apotheosis.png")}></img>
             Apotheosis
           </div>
         </Link>
@@ -44,9 +45,9 @@ export default function Navbar() {
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a href="/timeline">
+            <Link href="/timeline">
               <h1>Timeline</h1>
-            </a>
+            </Link>
           </li>
 
           <li>

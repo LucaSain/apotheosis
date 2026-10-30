@@ -1,19 +1,20 @@
 import Navbar from "../components/navbar";
-import dynamic from "next/dynamic";
+import Timeline from "../components/timeline";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-const TwoTimeLine = dynamic(() => import("../components/two/twotimeline"), {
-  ssr: false,
-});
-
-export default function Timeline() {
+export default function TimelinePage() {
   const router = useRouter();
-  const { pos } = router.query;
+  // Render only after hydration, once ?pos= is known (static export has no query at build time).
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    if (router.isReady) setReady(true);
+  }, [router.isReady]);
 
   return (
     <>
       <Navbar />
-      {pos ? <TwoTimeLine pos={pos} /> : <TwoTimeLine />}
+      {ready && <Timeline pos={router.query.pos} />}
     </>
   );
 }

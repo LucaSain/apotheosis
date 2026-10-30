@@ -2,25 +2,30 @@
 
 ## About
 
-A 3D mindmap showcasing the relations between philosophers.
+A 3D mindmap showcasing the relations between philosophers, plus an interactive timeline.
 
 Currently only in Romanian.
 
 ## Navigate to:
-	/tree for the 3D mindmap.
-	/timeline for the timeline.
-   	/<philosopher name> for information about a philosopher.
+	/tree for the 3D mindmap (/tree?id=<philosopher> to focus one).
+	/timeline for the timeline (/timeline?pos=<year> to jump to a year).
 
 ## Built with:
 
-+ FE: React and Next
++ FE: React and Next (static export)
 + UI: Tailwindcss and DaisyUI.
-+ 2D Graphics (timeline+homescreen): Two.JS
++ 2D Graphics (homescreen): Two.JS
 + 3D: ThreeJS, React-Three-Fiber and React-Three-Drei.
-+ DB: Upstash Redis.
 
-## Env
-REDIS_URL -> String
-REDIS_TOKEN -> String
+All data lives in `utils/data.js`; no backend or env vars are needed.
 
-Serverside generated.
+## Development
+
+    npm install
+    npm run dev
+
+## Deployment
+
+Pushes to `static` are built with `next build` (static export to `out/`) and
+deployed to GitHub Pages by `.github/workflows/deploy.yml`. The workflow sets
+`NEXT_PUBLIC_BASE_PATH` so the site works under `/<repo>/`.

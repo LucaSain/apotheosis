@@ -8,10 +8,11 @@ title: Waterworld
 import { MeshStandardMaterial } from "three";
 import React, { useEffect, useRef, useState } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
+import { asset } from "../../utils/asset";
 
 export function Model({ position, name, colori, size }) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/waterworld.glb");
+  const { nodes, materials, animations } = useGLTF(asset("/waterworld.glb"));
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
@@ -80,4 +81,4 @@ export function Model({ position, name, colori, size }) {
   );
 }
 
-useGLTF.preload("/waterworld.glb");
+useGLTF.preload(asset("/waterworld.glb"));
